@@ -1,0 +1,45 @@
+:host {
+  display: block;
+  min-width: 0;
+  width: 100%;
+}
+
+.table-head {
+  background: #e8f2fc;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+
+
+.leading-snug {
+  padding: 20px 0;
+}
+
+.leading-snug span{
+  padding: 0 12px;
+}
+
+.doc-card {
+  border: 1px solid #034EA21F;
+  border-radius: 10px;
+  background: var(--color-surface-card);
+  padding: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+
+  transition: box-shadow 0.15s ease;
+}
+
+.doc-card:hover {
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 768px) {
+  .doc-card {
+    width: max-content;
+  }
+}

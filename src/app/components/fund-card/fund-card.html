@@ -1,0 +1,103 @@
+
+<div class="rounded-2xl overflow-hidden shadow-md border border-border font-inter">
+
+  <div class="bg-brand-header px-[16px] pt-[16px] pb-[12px] text-white font-inter">
+
+    <div class="flex items-center justify-between gap-2 mb-[6px]">
+      <h2 class="text-[18px] font-bold leading-snug font-inter">Edelweiss Flexi Cap Fund</h2>
+      <button class="border border-border-faint-strong font-semibold font-inter text-brand text-[12px] bg-surface rounded-full py-[6px] px-[10px] flex items-center gap-[4px]">
+        DIR · G
+        <span class="text-ink-muted">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-3 h-3">
+            <path d="M3.5 5.25L7 8.75L10.5 5.25" stroke="currentColor" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </span>
+      </button>
+    </div>
+
+    <div class="flex flex-wrap gap-[4.44px] mb-4">
+      <span class="bg-white/10 border-[0.74px] border-border-faint text-white text-[8.25px] px-[5.93px] py-[2.96px] rounded-full">Flexi Cap</span>
+      <span class="bg-white/10 border-[0.74px] border-border-faint text-white text-[8.25px] px-[5.93px] py-[2.96px] rounded-full">Equity</span>
+      <span class="bg-risk-bg flex items-center justify-center text-risk-soft text-[8.25px] px-[5.93px] py-[2.96px] rounded-full">Very High Risk</span>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <span class="text-[28px] font-bold mb-0 font-roboto">₹38.536</span>
+      <span class="bg-success-muted text-success-dark text-[12px] mt-1 font-semibold px-2.5 py-0.5 rounded-full">
+        ↗ 0.79%
+      </span>
+    </div>
+    <p class="text-white/60 text-[12px]">NAV as on Apr 2026</p>
+  </div>
+
+  <div class="bg-surface">
+
+    <div class="p-[16px]">
+      <div class="flex items-center justify-between mb-4">
+        <span class="w-[35%] font-semibold text-[14px] text-gray-800">Performance</span>
+        <app-investment-toggle></app-investment-toggle>
+      </div>
+
+      <div class="mb-4">
+        <app-period-selector></app-period-selector>
+      </div>
+
+      <div class="mb-3">
+        <div class="flex justify-between text-[12px] mb-1">
+          <span class="text-ink-body/80 font-medium">This Fund</span>
+          <span class="font-semibold text-ink-body font-medium">13.2%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-[8px]">
+          <div class="bg-brand-dark h-[8px] rounded-full" style="width: 70%"></div>
+        </div>
+      </div>
+      <div class="mb-2">
+        <div class="flex justify-between text-[12px] mb-1">
+          <span class="text-ink-body/80 font-medium">Nifty 500 TRI</span>
+          <span class="font-semibold text-ink-body font-medium">12.1%</span>
+        </div>
+        <div class="w-full bg-gray-200 rounded-full h-[8px]">
+          <div class="bg-gray-400 h-[8px] rounded-full" style="width: 60%"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 text-[12px] mt-3 mb-4 border-t border-border-faint">
+
+      <div class="py-[12px] px-[12px] flex items-center border-b border-l border-r border-border-faint gap-[16px]">
+        <p class="text-gray-400">Min SIP</p>
+        <p class="font-semibold text-gray-800">₹100 / month</p>
+      </div>
+
+      <div class="py-[12px] px-[12px] flex items-center border-b border-r border-border-faint gap-[16px]">
+        <p class="text-gray-400">Min Investment</p>
+        <p class="font-semibold text-gray-800">₹1000</p>
+      </div>
+
+      <div class="py-[12px] px-[12px] flex items-center border-b border-l border-r border-border-faint gap-[42px]">
+        <p class="text-gray-400">Annualized <br>Return</p>
+        <p class="font-semibold text-gray-800">13.2%</p>
+      </div>
+
+      <div class="py-[12px] px-[12px] flex items-center border-b border-r border-border-faint gap-[42px]">
+        <p class="text-gray-400">Benchmark <br>Return</p>
+        <p class="font-semibold text-gray-800">14.3%</p>
+      </div>
+
+    </div>
+
+    <div class="px-[16px]">
+      <div class="flex items-center justify-center gap-2 bg-surface-alt rounded-xl p-[16px] mb-4 text-[12px]">
+        <img src="/users-ico.svg" alt="users-icon" />
+        <p class="text-ink">
+          <span class="text-brand font-semibold">1.16 lakh people have invested</span>
+          <br />in this fund as of March 2026
+        </p>
+      </div>
+      <button class="w-full mb-[16px] bg-brand hover:bg-brand-hover text-white font-semibold py-3 rounded-xl transition-colors text-[14px]">
+        Invest Now
+      </button>
+    </div>
+
+  </div>
+</div>

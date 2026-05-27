@@ -1,0 +1,158 @@
+<div id="calculator" class="scroll-mt-[88px]">
+  <div class="card font-inter">
+
+    <div class="flex items-center justify-between mb-5">
+      <h2 class="text-[16px] font-bold text-ink">Calculator</h2>
+     
+    </div>
+
+    <div class="sub-card">
+      <div class="grid grid-cols-1 lg:grid-cols-2 md:gap-8">
+
+        <div class="flex flex-col">
+
+          <div class="flex bg-surface-pill rounded-full p-0.5 text-[12px] w-full max-w-[190px] md:max-w-[200px]">
+            @for (investment of investments; track investment) {
+              <button
+                type="button"
+                (click)="setInvestment(investment)"
+                class="flex-1 py-2 min-h-[29px] rounded-full transition-all duration-200 font-semibold text-[13px]"
+                [class.bg-surface]="activeInvestment() === investment"
+                [class.shadow]="activeInvestment() === investment"
+                [class.text-brand]="activeInvestment() === investment"
+                [class.text-ink-muted]="activeInvestment() !== investment"
+              >
+                {{ investment }}
+              </button>
+            }
+          </div>
+          <div class="block md:hidden mt-5">
+            <app-calculator-period-selector
+              [periods]="periods"
+              [activePeriod]="activePeriod()"
+              (periodChange)="setPeriod($event)"
+            />
+          </div>
+         
+
+          <p class="text-[11px] font-roboto font-semibold tracking-widest uppercase text-ink-muted mt-5 mb-2">
+            @if (activeInvestment() === 'SIP') {
+              Monthly Investment
+            } @else {
+              Lumpsum Investment
+            }
+          </p>
+
+          <div class="flex items-stretch rounded-lg border border-border bg-surface overflow-hidden">
+            <div class="flex items-center justify-center w-[30px] md:min-w-[43px] md:bg-surface-pill md:border md:border-[var(--color-brand)] text-ink-muted md:text-brand md:text-[18px] md:font-semibold md:rounded-[12px_0_0_12px]">
+              ₹
+            </div>
+            <input
+              type="text"
+              value="100"
+              class="flex-1 ps-[5px] md:ps-[16px] pe-[5px] py-[10px] md:text-[22px] text-[18px] font-bold text-ink outline-none"
+            />
+          </div>
+
+          <div class="mt-4">
+            <input
+              type="range"
+              min="100"
+              max="1000000"
+              step="100"
+              value="100"
+              class="calc-range"
+              (input)="updateRangeFill($event)"
+              [attr.aria-label]="activeInvestment() === 'SIP' ? 'Monthly investment amount' : 'Lumpsum investment amount'"
+            />
+            <div class="flex justify-between text-[11px] text-ink-muted mt-1">
+              <span>₹ 100</span>
+              <span>₹ 10 Lakhs</span>
+            </div>
+          </div>
+
+          <p class="text-[11px] text-ink-muted mt-4 leading-snug font-roboto">
+            Past performance may or may not be sustained in future. For performance in SEBI
+            format please refer returns section.
+          </p>
+
+          <div class="grid-cols-2 gap-3 mt-5 hidden md:grid">
+            <button
+              type="button"
+              class="flex items-center justify-between border border-border rounded-lg px-4 py-3 text-left text-brand text-[14px] font-bold leading-snug hover:bg-surface-muted transition-colors"
+            >
+              Rolling Return<br />Calculator
+              <span class="flex items-center justify-center w-7 h-7 rounded-md border border-border text-ink-muted shrink-0">
+                ›
+              </span>
+            </button>
+            <button
+              type="button"
+              class="flex items-center justify-between border border-border rounded-lg px-4 py-3 text-left text-brand text-[14px] font-bold leading-snug hover:bg-surface-muted transition-colors"
+            >
+              Point to Point<br />Calculator
+              <span class="flex items-center justify-center w-7 h-7 rounded-md border border-border text-ink-muted shrink-0">
+                ›
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <div class="hidden md:block">
+            <app-calculator-period-selector
+              [periods]="periods"
+              [activePeriod]="activePeriod()"
+              (periodChange)="setPeriod($event)"
+            />
+          </div>
+  
+
+          <p class="text-[12px] text-ink-muted mt-5 mb-3">
+            Worth of investments in last
+            <span class="font-bold text-[var(--color-ink-muted)]">{{ periodLabel() }}</span>
+          </p>
+
+          <div class="md:rounded-xl md:border md:border-border overflow-hidden">
+            <div class="flex rounded-md md:rounded-none items-center justify-between md:px-[20px] px-[12px] md:py-[18px] py-[12px] mb-[8px] md:mb-0 bg-brand/5 border md:border-none border-border">
+              <span class="text-[14px] font-semibold text-ink">This Fund</span>
+              <div class="text-right">
+                <p class="text-[18px] md:text-[22px] font-bold text-brand leading-none">₹1,091</p>
+                <p class="text-[12px] font-semibold text-red-500 mt-1">-17.68%</p>
+              </div>
+            </div>
+            <div class="flex rounded-md md:rounded-none items-center justify-between md:px-[20px] px-[12px] md:py-[18px] py-[12px] bg-surface border md:border-t border-border ">
+              <span class="text-[14px] font-semibold text-ink">Nifty 500 TRI</span>
+              <div class="text-right">
+                <p class="text-[18px] md:text-[22px] font-bold text-ink leading-none">₹1,089</p>
+                <p class="text-[12px] font-semibold text-red-500 mt-1">-18.07%</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-cols-2 gap-3 mt-5 grid md:hidden">
+            <button
+              type="button"
+              class="flex items-center justify-between border border-border rounded-lg px-4 py-3 text-left text-brand text-[14px] font-bold leading-snug hover:bg-surface-muted transition-colors"
+            >
+              Rolling Return<br />Calculator
+              <span class="flex items-center justify-center w-7 h-7 rounded-md border border-border text-ink-muted shrink-0">
+                ›
+              </span>
+            </button>
+            <button
+              type="button"
+              class="flex items-center justify-between border border-border rounded-lg px-4 py-3 text-left text-brand text-[14px] font-bold leading-snug hover:bg-surface-muted transition-colors"
+            >
+              Point to Point<br />Calculator
+              <span class="flex items-center justify-center w-7 h-7 rounded-md border border-border text-ink-muted shrink-0">
+                ›
+              </span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

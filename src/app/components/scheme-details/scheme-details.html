@@ -1,0 +1,92 @@
+<div class="card font-roboto">
+  <h2 class="text-[15px] font-bold text-ink mb-4">Scheme Details</h2>
+
+  <div
+    class="flex bg-[var(--color-border-panel)] rounded-[8px] p-[3px] text-[13px] mb-4  w-fit"
+    role="tablist"
+    aria-label="Scheme details sections"
+  >
+    <button
+      type="button"
+      role="tab" 
+      [attr.aria-selected]="activeTab() === 'about'"
+      class="py-[7px] px-[16px] rounded-[8px] font-semibold transition-all duration-200 text-[12px] whitespace-nowrap "
+      [class.bg-brand]="activeTab() === 'about'"
+      [class.text-white]="activeTab() === 'about'"
+      [class.shadow-sm]="activeTab() === 'about'"
+      [class.scheme-tab-inactive]="activeTab() !== 'about'"
+      [class.text-ink-muted]="activeTab() !== 'about'"
+      (click)="setTab('about')"
+    >
+      About Scheme
+    </button>
+    <button
+      type="button"
+      role="tab"
+      [attr.aria-selected]="activeTab() === 'features'"
+      class="py-[7px] px-[16px] rounded-[8px] font-semibold transition-all duration-200 text-[12px] whitespace-nowrap "
+      [class.bg-brand]="activeTab() === 'features'"
+      [class.text-white]="activeTab() === 'features'"
+      [class.shadow-sm]="activeTab() === 'features'"
+      [class.scheme-tab-inactive]="activeTab() !== 'features'"
+      [class.text-ink-muted]="activeTab() !== 'features'"
+      (click)="setTab('features')"
+    >
+      Features
+    </button>
+  </div>
+
+  @if (activeTab() === 'about') {
+    <div role="tabpanel" class="flex flex-col border-t border-border-subtle pt-1 md:gap-[18px] md:gap-[0px]">
+      <div class="scheme-row">
+        <span class="scheme-label">Inception Date</span>
+        <span class="scheme-value">03 Feb 2015</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Minimum Investment</span>
+        <span class="scheme-value">₹100 in multiples of ₹1 thereafter</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Expense Ratio</span>
+        <span class="scheme-value">1.91%</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Exit Load</span>
+        <span class="scheme-value">1%, if redeemed within 90 days</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Plans</span>
+        <span class="scheme-value">Regular, Direct</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Type</span>
+        <span class="scheme-value">Open ended dynamic equity scheme – large cap, mid cap, small cap stocks</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Options</span>
+        <span class="scheme-value">Growth, IDCW (Income Distribution Capital Withdrawal)</span>
+      </div>
+      <div class="scheme-row">
+        <span class="scheme-label">Benchmark</span>
+        <span class="scheme-value">Nifty 500 TRI</span>
+      </div>
+      <div class="scheme-row scheme-row-last">
+        <span class="scheme-label">No. of Stocks</span>
+        <span class="scheme-value">85</span>
+      </div>
+    </div>
+  } @else {
+    <div role="tabpanel" class="flex flex-col gap-3 border-t border-border-subtle pt-4">
+      <p class="text-[13px] text-ink-secondary leading-relaxed m-0">
+        The scheme aims to generate long-term capital appreciation by investing dynamically across large, mid,
+        and small cap companies while managing risk through diversified stock selection.
+      </p>
+      <ul class="list-disc pl-5 m-0 text-[13px] text-ink-secondary space-y-2">
+        <li>Flexibility to move across market capitalizations based on market conditions</li>
+        <li>Research-driven stock selection with active portfolio management</li>
+        <li>Option to invest via SIP, lump sum, or a combination of both</li>
+        <li>Available under Regular and Direct plans with Growth and IDCW options</li>
+      </ul>
+    </div>
+  }
+</div>

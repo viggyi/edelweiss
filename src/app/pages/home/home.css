@@ -1,0 +1,8 @@
+.fund-nav-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.fund-nav-scroll::-webkit-scrollbar {
+  display: none;
+}

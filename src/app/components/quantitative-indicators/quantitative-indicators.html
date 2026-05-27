@@ -1,0 +1,208 @@
+<!-- Icon sprite -->
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  class="pointer-events-none absolute h-px w-px overflow-hidden"
+  aria-hidden="true"
+  focusable="false"
+>
+  <symbol id="qi-info-circle" viewBox="0 0 11 11">
+    <path
+      fill="#034EA2"
+      d="M5.25 0C6.64239 0 7.97774 0.553123 8.96231 1.53769C9.94688 2.52226 10.5 3.85761 10.5 5.25C10.5 6.64239 9.94688 7.97774 8.96231 8.96231C7.97774 9.94688 6.64239 10.5 5.25 10.5C3.85761 10.5 2.52226 9.94688 1.53769 8.96231C0.553123 7.97774 0 6.64239 0 5.25C0 3.85761 0.553123 2.52226 1.53769 1.53769C2.52226 0.553123 3.85761 0 5.25 0ZM6.0375 3.22266C6.42773 3.22266 6.74414 2.95313 6.74414 2.55117C6.74414 2.14922 6.42773 1.87969 6.0375 1.87969C5.64727 1.87969 5.33203 2.14922 5.33203 2.55117C5.33203 2.95313 5.64844 3.22383 6.0375 3.22383M6.17461 7.44375C6.17461 7.36406 6.20273 7.15547 6.18633 7.03594L5.56992 7.74609C5.44219 7.87969 5.28281 7.97344 5.20781 7.94883C5.17397 7.93617 5.14572 7.9119 5.12812 7.88035C5.11052 7.84879 5.10471 7.81201 5.11172 7.77656L6.13828 4.53047C6.22266 4.11797 5.9918 3.74297 5.50195 3.69492C4.98633 3.69492 4.22461 4.21875 3.76172 4.88437C3.76172 4.96406 3.74648 5.16094 3.76172 5.28047L4.37813 4.57031C4.50703 4.43672 4.65469 4.34297 4.72969 4.36875C4.76618 4.38252 4.796 4.40976 4.81301 4.44486C4.83001 4.47996 4.83291 4.52025 4.82109 4.55742L3.80156 7.78828C3.68437 8.16562 3.90703 8.53594 4.44727 8.62031C5.24297 8.62031 5.71289 8.10938 6.17578 7.44375H6.17461Z"
+    />
+  </symbol>
+</svg>
+
+<div class="card qi-card">
+  <div class="flex items-center gap-2 mb-4">
+    <h2 class="text-[15px] font-bold text-ink">Quantitative Indicators</h2>
+    <span class="text-[12px] text-ink-muted">(as on 30 Mar 2026)</span>
+  </div>
+
+  <div class="grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-6 gap-3 mb-4">
+    <!-- Standard Deviation -->
+    <div
+      class="relative bg-surface-muted md:bg-border-panel rounded-[10px] p-[10px] md:p-[14px] flex flex-col items-center justify-center text-center min-w-0"
+    >
+      <div class="qi-tooltip-trigger">
+        <button
+          type="button"
+          class="qi-tooltip-btn"
+          aria-label="Standard Deviation explanation"
+          aria-describedby="qi-tip-standard-deviation"
+        >
+          <svg width="11" height="11" aria-hidden="true">
+            <use href="#qi-info-circle" />
+          </svg>
+        </button>
+        <div id="qi-tip-standard-deviation" class="qi-tooltip" role="tooltip">
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">What is it:</span>
+            It measures how much the fund&#39;s returns have varied around their average.
+          </p>
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">How should you use it:</span>
+            Higher standard deviation usually means higher volatility; pair it with your time horizon and other risk ratios before comparing funds.
+          </p>
+        </div>
+      </div>
+      <p class="text-[16px] md:text-[22px]  font-bold text-brand leading-tight">14.88%</p>
+      <p class="text-[10px] md:text-[11px] text-ink-muted mt-1">Standard Deviation</p>
+    </div>
+
+    <!-- Sharpe Ratio -->
+    <div
+      class="relative bg-surface-muted md:bg-border-panel rounded-[10px] p-[10px] md:p-[14px] flex flex-col items-center justify-center text-center min-w-0"
+    >
+      <div class="qi-tooltip-trigger">
+        <button
+          type="button"
+          class="qi-tooltip-btn"
+          aria-label="Sharpe Ratio explanation"
+          aria-describedby="qi-tip-sharpe"
+        >
+          <svg width="11" height="11" aria-hidden="true">
+            <use href="#qi-info-circle" />
+          </svg>
+        </button>
+        <div id="qi-tip-sharpe" class="qi-tooltip" role="tooltip">
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">What is it:</span>
+            It shows excess return earned per unit of total risk taken (volatility), after adjusting for the risk‑free rate.
+          </p>
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">How should you use it:</span>
+            For similar strategies, a higher Sharpe Ratio can indicate better risk‑adjusted outcomes; always interpret using the stated risk‑free assumptions.
+          </p>
+        </div>
+      </div>
+      <p class="text-[16px] md:text-[22px] font-bold text-brand leading-tight">0.58</p>
+      <p class="text-[10px] md:text-[11px] text-ink-muted mt-1">Sharpe Ratio</p>
+    </div>
+
+    <!-- Treynor Ratio -->
+    <div
+      class="relative bg-surface-muted md:bg-border-panel rounded-[10px] p-[10px] md:p-[14px] flex flex-col items-center justify-center text-center min-w-0"
+    >
+      <div class="qi-tooltip-trigger">
+        <button
+          type="button"
+          class="qi-tooltip-btn"
+          aria-label="Treynor Ratio explanation"
+          aria-describedby="qi-tip-treynor"
+        >
+          <svg width="11" height="11" aria-hidden="true">
+            <use href="#qi-info-circle" />
+          </svg>
+        </button>
+        <div id="qi-tip-treynor" class="qi-tooltip" role="tooltip">
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">What is it:</span>
+            It measures excess return earned per unit of market (systematic) risk, expressed via Beta.
+          </p>
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">How should you use it:</span>
+            Treynor is most meaningful when Beta is credible; combine with Beta and benchmarking context when comparing funds.
+          </p>
+        </div>
+      </div>
+      <p class="text-[16px] md:text-[22px] font-bold text-brand leading-tight">8.76</p>
+      <p class="text-[10px] md:text-[11px] text-ink-muted mt-1">Treynor Ratio</p>
+    </div>
+
+    <!-- Beta -->
+    <div
+      class="relative bg-surface-muted md:bg-border-panel rounded-[10px] p-[10px] md:p-[14px] flex flex-col items-center justify-center text-center min-w-0"
+    >
+      <div class="qi-tooltip-trigger">
+        <button
+          type="button"
+          class="qi-tooltip-btn"
+          aria-label="Beta explanation"
+          aria-describedby="qi-tip-beta"
+        >
+          <svg width="11" height="11" aria-hidden="true">
+            <use href="#qi-info-circle" />
+          </svg>
+        </button>
+        <div id="qi-tip-beta" class="qi-tooltip" role="tooltip">
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">What is it:</span>
+            It tells you by how much the scheme will be impacted compared to the market.
+          </p>
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">How should you use it:</span>
+            It helps you compare the scheme&#39;s sensitivity with market movements. Generally, higher Beta implies higher sensitivity to broad market swings.
+          </p>
+        </div>
+      </div>
+      <p class="text-[16px] md:text-[22px] font-bold text-brand leading-tight">0.99</p>
+      <p class="text-[10px] md:text-[11px] text-ink-muted mt-1">Beta</p>
+    </div>
+
+    <!-- R-Squared -->
+    <div
+      class="relative bg-surface-muted md:bg-border-panel rounded-[10px] p-[10px] md:p-[14px] flex flex-col items-center justify-center text-center min-w-0"
+    >
+      <div class="qi-tooltip-trigger">
+        <button
+          type="button"
+          class="qi-tooltip-btn"
+          aria-label="R-Squared explanation"
+          aria-describedby="qi-tip-r-squared"
+        >
+          <svg width="11" height="11" aria-hidden="true">
+            <use href="#qi-info-circle" />
+          </svg>
+        </button>
+        <div id="qi-tip-r-squared" class="qi-tooltip" role="tooltip">
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">What is it:</span>
+            It indicates how closely the scheme&#39;s performance moves in line with the chosen benchmark.
+          </p>
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">How should you use it:</span>
+            Higher R‑Squared means the benchmark explains more of returns; Alpha and Beta are more meaningful when R‑Squared is high.
+          </p>
+        </div>
+      </div>
+      <p class="text-[16px] md:text-[22px] font-bold text-brand leading-tight">0.96</p>
+      <p class="text-[10px] md:text-[11px] text-ink-muted mt-1">R-Squared</p>
+    </div>
+
+    <!-- Portfolio Turnover -->
+    <div
+      class="relative bg-surface-muted md:bg-border-panel rounded-[10px] p-[10px] md:p-[14px] flex flex-col items-center justify-center text-center min-w-0"
+    >
+      <div class="qi-tooltip-trigger">
+        <button
+          type="button"
+          class="qi-tooltip-btn"
+          aria-label="Portfolio Turnover explanation"
+          aria-describedby="qi-tip-portfolio-turnover"
+        >
+          <svg width="11" height="11" aria-hidden="true">
+            <use href="#qi-info-circle" />
+          </svg>
+        </button>
+        <div id="qi-tip-portfolio-turnover" class="qi-tooltip" role="tooltip">
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">What is it:</span>
+            It reflects how actively the underlying portfolio has been traded over the period measured.
+          </p>
+          <p class="qi-tooltip__para">
+            <span class="qi-tooltip__label">How should you use it:</span>
+            Higher turnover can relate to churn and implicit costs/tax incidence; weigh it alongside investment style disclosures and AMC practice.
+          </p>
+        </div>
+      </div>
+      <p class="text-[16px] md:text-[22px] font-bold text-brand leading-tight">0.42</p>
+      <p class="text-[10px] md:text-[11px] text-ink-muted mt-1">Portfolio Turnover</p>
+    </div>
+  </div>
+
+  <p class="text-[10px] text-ink-label leading-relaxed">
+    Standard Deviation: Monthly rolling returns last 3 years. Sharpe Ratio: Risk-free rate (FIMMDA Overnight MIBOR)
+    6.98%. No. of Stocks: 85.
+  </p>
+</div>

@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .pointers {
+    border: none;
+    padding: 0;
+    margin-bottom: 8px;
+  }
+}

@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { bootstrapApplication } from '@angular/platform-browser';\nimport { App } from './app/app';\nimport { config } from './app/app.config.server';\nconst bootstrap = () => bootstrapApplication(App, config);\nexport default bootstrap;","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}

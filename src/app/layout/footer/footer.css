@@ -1,0 +1,31 @@
+.footer {
+  background: linear-gradient(125.14deg, #071e42 0%, #0b3278 45%, #0d4399 100%);
+  padding-block: 24px;
+}
+
+.footer-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9999px;
+  background-color: rgb(255 255 255 / 0.1);
+  color: #fff;
+  transition: background-color 150ms ease;
+}
+
+.footer-social-link:hover {
+  background-color: rgb(255 255 255 / 0.2);
+}
+
+@media (max-width: 640px) {
+  .footer{
+    padding-block: 16px;
+  }
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+}

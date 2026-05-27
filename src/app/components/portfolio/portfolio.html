@@ -1,0 +1,65 @@
+<div class="card font-roboto">
+
+  <!-- Header -->
+  <div class="flex items-center justify-between mb-5">
+    <h2 class="text-[16px] font-bold text-ink">Portfolio</h2>
+  </div>
+
+  <!-- Main tab toggle: Holdings | Entry/Exit of Stocks -->
+  <div class="flex bg-[var(--color-border-panel)] rounded-[8px] p-[3px] text-[13px] mb-4  w-fit">
+    @for (tab of tabs; track tab) {
+      <button
+        type="button"
+        (click)="setTab(tab)"
+        class="py-[7px] px-[16px] rounded-[8px] font-semibold transition-all duration-200 text-[12px] whitespace-nowrap "
+        [class.bg-brand]="activeTab() === tab"
+        [class.text-white]="activeTab() === tab"
+        [class.text-ink-muted]="activeTab() !== tab"
+      >
+        {{ tab }}
+      </button>
+    }
+  </div>
+
+  <!-- Asset sub-tab: Equity | Debt -->
+  <div class="flex rounded-[8px] p-[3px] text-[13px] mb-5 w-fit">
+    @for (a of assetTabs; track a) {
+      <button
+        type="button"
+        (click)="setAssetTab(a)"
+        class="py-[5px] px-[12px] rounded-[8px] font-semibold transition-all duration-200 text-[12px]"
+        [class.bg-brand]="activeAssetTab() === a"
+        [class.text-white]="activeAssetTab() === a"
+        [class.text-ink-muted]="activeAssetTab() !== a"
+      >
+        {{ a }}
+      </button>
+    }
+  </div>
+
+  <!-- Top Holdings label -->
+  <p class="text-[15px] font-bold text-ink mb-3">Top Holdings</p>
+
+  <!-- Holdings list -->
+  <div class="flex flex-col divide-y divide-border-subtle">
+    @for (holding of visibleHoldings; track holding.name) {
+      <div class="flex items-center justify-between py-[10px]">
+        <div>
+          <p class="md:text-[13px] text-[14px] font-semibold text-ink leading-snug">{{ holding.name }}</p>
+          <p class="md:text-[11px] text-[10px] text-ink-muted mt-[2px]">{{ holding.category }} · {{ holding.cap }}</p>
+        </div>
+        <span class="text-[14px] font-semibold text-brand ml-4 shrink-0">{{ holding.pct }}</span>
+      </div>
+    }
+  </div>
+
+  <!-- Show More button -->
+  <button
+    type="button"
+    (click)="showAll = !showAll"
+    class="mt-4 w-full py-[10px] rounded-lg border border-border text-[13px] font-semibold text-brand hover:bg-surface-muted transition-colors duration-150"
+  >
+    {{ showAll ? 'Show Less ↑' : 'Show More ↓' }}
+  </button>
+
+</div>

@@ -1,0 +1,80 @@
+:host {
+  display: block;
+  min-width: 0;
+  width: 100%;
+}
+
+/* Allow tooltips to extend past the shared .card overflow (global .card uses overflow: hidden). */
+:host .qi-card {
+  overflow: visible;
+}
+
+.qi-tooltip-trigger {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 2;
+}
+
+.qi-tooltip-btn {
+  display: flex;
+  width: 14px;
+  height: 14px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  border-radius: 9999px;
+  background: transparent;
+  cursor: help;
+  cursor: pointer;
+}
+
+.qi-tooltip {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  z-index: 30;
+
+  box-sizing: border-box;
+  width: max-content;
+  max-width: min(272px, calc(100vw - 24px));
+
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 0px 0px 7.8px 0px #0000001a;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 8px;
+  line-height: 1.45;
+  color: var(--color-ink-secondary);
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.12s ease-out,
+    visibility 0.12s ease-out;
+}
+
+/* Show when hovering the icon or when the button is focused (keyboard). */
+.qi-tooltip-trigger:hover .qi-tooltip,
+.qi-tooltip-trigger:focus-within .qi-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.qi-tooltip__para {
+  margin: 0 0 0.5rem;
+}
+
+.qi-tooltip__para:last-child {
+  margin-bottom: 0;
+}
+
+.qi-tooltip__label {
+  font-weight: 700;
+  color: var(--color-ink);
+}

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.period-pill {
+  display: inline-flex;
+  cursor: pointer;
+  background-color: var(--color-surface-pill);
+  border-radius: 12px;
+}
+
+.pill-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: var(--color-ink-muted);
+  font-size: 11px;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.period-pill input:checked + .pill-label {
+  background-color: var(--color-brand-dark);
+  color: var(--color-surface);
+  border-color: var(--color-brand-dark);
+}

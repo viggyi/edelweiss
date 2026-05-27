@@ -1,0 +1,16 @@
+.fund-nav-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.fund-nav-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.home2-page {
+  overflow-x: clip;
+}
+
+.home2-hero {
+  background: linear-gradient(125.14deg, #071e42 0%, #0b3278 45%, #0d4399 100%);
+}

@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { Home } from './pages/home/home';\nimport { Home2 } from './pages/home2/home2';\nexport const routes = [{\n  path: '',\n  component: Home\n}, {\n  path: 'home2',\n  component: Home2\n}];","map":null,"metadata":{},"sourceType":"module","externalDependencies":[]}
