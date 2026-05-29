@@ -27,6 +27,12 @@ const HOLDINGS: Holding[] = [
   { name: 'Bharti Airtel Ltd', category: 'Telecommunication', cap: 'Large Cap', pct: '1.97%' },
 ];
 
+const EXTRA_HOLDINGS: Holding[] = [
+  { name: 'Axis Bank Ltd.', category: 'Financials', cap: 'Large Cap', pct: '1.82%' },
+  { name: 'Asian Paints Ltd.', category: 'Consumer Goods', cap: 'Large Cap', pct: '1.64%' },
+  { name: 'Hindustan Unilever Ltd.', category: 'FMCG', cap: 'Large Cap', pct: '1.51%' },
+];
+
 @Component({
   selector: 'app-portfolio',
   imports: [],
@@ -46,6 +52,6 @@ export class Portfolio {
   setAssetTab(a: AssetTab) { this.activeAssetTab.set(a); }
 
   get visibleHoldings(): Holding[] {
-    return this.showAll ? this.holdings : this.holdings.slice(0, 5);
+    return this.showAll ? [...this.holdings, ...EXTRA_HOLDINGS] : this.holdings;
   }
 }
