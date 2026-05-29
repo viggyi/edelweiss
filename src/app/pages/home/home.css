@@ -6,3 +6,14 @@
 .fund-nav-scroll::-webkit-scrollbar {
   display: none;
 }
+
+.fund-nav-link-active {
+  border-bottom-color: #0b3278 !important;
+  color: #0b3278;
+  font-weight: 600;
+}
+
+.fund-nav-link-inactive {
+  border-bottom-color: transparent;
+  color: #6b7280;
+}

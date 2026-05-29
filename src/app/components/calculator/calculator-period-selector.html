@@ -1,9 +1,9 @@
-<div class="flex bg-surface-pill rounded-full p-0.5 text-[12px] self-end w-full">
+<div class="flex period-check bg-surface-pill rounded-full p-0.5 text-[12px] self-end w-full">
   @for (period of periods(); track period) {
     <button
       type="button"
       (click)="selectPeriod(period)"
-      class="flex-1 py-2 min-h-[29px] rounded-full transition-all duration-200 font-semibold text-[13px] whitespace-nowrap"
+      class="py-2 min-h-[29px] rounded-full transition-all duration-200 font-semibold text-[13px] whitespace-nowrap"
       [class.bg-surface]="activePeriod() === period"
       [class.shadow]="activePeriod() === period"
       [class.text-brand]="activePeriod() === period"

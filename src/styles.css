@@ -125,7 +125,13 @@ app-current-nav {
   padding-inline: 1rem;
 }
 
+.section-hm2{
+  padding: 72px 0 0;
+}
 
+.section-title p:last-child{
+  margin-bottom: 25px;
+}
 
 @media (min-width: 640px) {
   .container {

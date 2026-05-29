@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { FundCard } from '../../components/fund-card/fund-card';
 import { Overview } from '../../components/overview/overview';
 import { Calculator } from '../../components/calculator/calculator';
@@ -10,6 +10,7 @@ import { CurrentNav } from '../../components/current-nav/current-nav';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [
     FundCard,
     Overview,
@@ -31,7 +32,37 @@ export class Home {
     { href: '#calculator', label: 'Calculator' },
     { href: '#portfolio', label: 'Portfolio' },
     { href: '#scheme-details', label: 'Scheme Details' },
-    { href: '#risk', label: 'Risk' },
+    { href: '#risk-rating', label: 'Risk' },
     { href: '#fund-managers', label: 'Fund Managers' },
   ] as const;
+
+  private static readonly ACTIVE_SECTION_OFFSET = 140;
+
+  ngAfterViewInit(): void {
+    this.updateActiveSectionFromScroll();
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.updateActiveSectionFromScroll();
+  }
+
+  private updateActiveSectionFromScroll(): void {
+    let activeHref: (typeof this.navLinks)[number]['href'] = this.navLinks[0].href;
+
+    for (const link of this.navLinks) {
+      const sectionId = link.href.replace('#', '');
+      const section = document.getElementById(sectionId);
+      if (!section) {
+        continue;
+      }
+
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop <= Home.ACTIVE_SECTION_OFFSET) {
+        activeHref = link.href;
+      }
+    }
+
+    this.activeNavHref.set(activeHref);
+  }
 }

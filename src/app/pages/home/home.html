@@ -17,12 +17,9 @@
             <a
               [href]="link.href"
               (click)="activeNavHref.set(link.href)"
-              class="rounded-none shrink-0 md:flex-1 whitespace-nowrap py-[14px] px-[28px] md:px-[18px] text-center text-[14px] md:text-[13px] font-medium no-underline border-b-2 border-r-0 transition-colors duration-150 hover:text-brand-dark hover:border-b-brand-dark"
-              [class.text-brand-dark]="activeNavHref() === link.href"
-              [class.font-semibold]="activeNavHref() === link.href"
-              [class.border-brand-dark]="activeNavHref() === link.href"
-              [class.text-ink-muted]="activeNavHref() !== link.href"
-              [class.border-transparent]="activeNavHref() !== link.href"
+              class="block rounded-none shrink-0 md:flex-1 whitespace-nowrap py-[14px] px-[28px] md:px-[18px] text-center text-[14px] md:text-[13px] font-medium no-underline border-b-2 border-r-0 transition-colors duration-150 hover:text-brand-dark hover:border-b-brand-dark"
+              [class.fund-nav-link-active]="activeNavHref() === link.href"
+              [class.fund-nav-link-inactive]="activeNavHref() !== link.href"
             >
               {{ link.label }}
             </a>
@@ -48,7 +45,7 @@
             <app-quantitative-indicators></app-quantitative-indicators>
           </div>
           <div id="scheme-details" class="scroll-mt-[88px]">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-start">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-stretch">
               <div class="min-w-0 w-full">
                 <app-scheme-details></app-scheme-details>
               </div>

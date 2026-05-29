@@ -1,4 +1,4 @@
-<section #heroSection class="home2-hero font-inter text-white py-12 md:py-16" aria-label="Fund hero">
+<section class="home2-hero font-inter text-white py-12 md:py-16" aria-label="Fund hero">
   <div class="container grid grid-cols-1 md:grid-cols-12">
     <div class="md:col-span-8">
       <div
@@ -14,7 +14,7 @@
       </h1>
 
       <p class="text-[15px] md:text-[16px] text-white/75 leading-relaxed max-w-2xl mb-10">
-        Forget picking large, mid, or small cap. Edelweiss Flexi Cap invests where the best opportunities are —
+        Forget picking large, mid, or small cap. Edelweiss Flexi Cap invests where the best opportunities are -
         so your wealth grows through every market cycle.
       </p>
 
@@ -23,15 +23,15 @@
           <p class="text-[22px] md:text-[26px] font-bold leading-none mb-1.5">₹2,934 Cr</p>
           <p class="text-[11px] font-medium uppercase tracking-wider text-white/50">AUM (Mar 2026)</p>
         </div>
-        <div class="md:border-r md:border-white/15">
+        <div class="md:px-[28px] md:border-r md:border-white/15">
           <p class="text-[22px] md:text-[26px] font-bold leading-none mb-1.5">₹38.54</p>
           <p class="text-[11px] font-medium uppercase tracking-wider text-white/50">NAV — Growth</p>
         </div>
-        <div class="md:border-r md:border-white/15">
+        <div class="md:px-[28px] md:border-r md:border-white/15">
           <p class="text-[22px] md:text-[26px] font-bold leading-none mb-1.5">1.16L</p>
           <p class="text-[11px] font-medium uppercase tracking-wider text-white/50">Investors</p>
         </div>
-        <div class="">
+        <div class="md:px-[28px] ">
           <p class="text-[22px] md:text-[26px] font-bold leading-none mb-1.5">Feb 2015</p>
           <p class="text-[11px] font-medium uppercase tracking-wider text-white/50">Inception</p>
         </div>
@@ -40,37 +40,25 @@
       <div class="flex flex-wrap gap-3">
         <span
           class="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-[12px] font-medium text-white/90">
-          <svg class="shrink-0 text-white/70" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="18" rx="2" />
-            <path d="M16 2v4M8 2v4M3 10h18" />
-          </svg>
+          <img src="/ico-hm2-1.svg" alt="" class="w-[16px] h-[16px]">
           Min SIP ₹100/month
         </span>
         <span
           class="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-[12px] font-medium text-white/90">
-          <svg class="shrink-0 text-white/70" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M12 2v20M2 12h20" />
-            <circle cx="12" cy="12" r="9" />
-          </svg>
+          <img src="/ico-hm2-2.svg" alt="" class="w-[16px] h-[16px]">
+
           Large + Mid + Small Cap
         </span>
         <span
           class="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-[12px] font-medium text-white/90">
-          <svg class="shrink-0 text-white/70" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9" />
-          </svg>
+          <img src="/ico-hm2-3.svg" alt="" class="w-[16px] h-[16px]">
+          
           Exit load: 1% within 90 days
         </span>
         <span
           class="inline-flex items-center gap-2 rounded-md border border-white/15 bg-white/5 px-4 py-2.5 text-[12px] font-medium text-white/90">
-          <svg class="shrink-0 text-white/70" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path d="M3 17l6-6 4 4 8-10" />
-            <path d="M14 5h7v7" />
-          </svg>
+          <img src="/ico-hm2-4.svg" alt="" class="w-[16px] h-[16px]">
+
           Regular &amp; Direct Plans
         </span>
       </div>
@@ -94,160 +82,217 @@
             <div class="flex w-max min-w-full md:w-full divide-x divide-border">
               @for (link of navLinks; track link.href) {
               <a [href]="link.href" (click)="activeNavHref.set(link.href)"
-                class="rounded-none shrink-0 md:flex-1 whitespace-nowrap py-[14px] px-[28px] md:px-[18px] text-center text-[14px] md:text-[13px] font-medium no-underline border-b-2 border-r-0 transition-colors duration-150 hover:text-brand-dark hover:border-b-brand-dark"
-                [class.text-brand-dark]="activeNavHref() === link.href"
-                [class.font-semibold]="activeNavHref() === link.href"
-                [class.border-brand-dark]="activeNavHref() === link.href"
-                [class.text-ink-muted]="activeNavHref() !== link.href"
-                [class.border-transparent]="activeNavHref() !== link.href">
+                class="block rounded-none shrink-0 md:flex-1 whitespace-nowrap py-[14px] px-[28px] md:px-[18px] text-center text-[14px] md:text-[13px] font-medium no-underline border-b-2 border-r-0 transition-colors duration-150 hover:text-brand-dark hover:border-b-brand-dark"
+                [class.fund-nav-link-active]="activeNavHref() === link.href"
+                [class.fund-nav-link-inactive]="activeNavHref() !== link.href">
                 {{ link.label }}
               </a>
               }
             </div>
           </nav>
 
-          <div class="flex flex-col gap-[16px]">
-            <app-overview></app-overview>
-            <app-calculator></app-calculator>
-            <div id="portfolio" class="scroll-mt-[88px]">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-start">
-                <div class="min-w-0 w-full">
-                  <app-portfolio></app-portfolio>
-                </div>
-                <div class="min-w-0 w-full">
-                  <app-allocation></app-allocation>
+          <div class="flex flex-col gap-[16px] scroll-mt-[88px]" id="overview">
+              <div class="section-hm2 !pb-[32px] border-b border-border-panel">
+                <div class="section-title">
+                  <p class="text-[11px] font-bold  uppercase tracking-[2px] text-green mb-1">Overview</p>
+                  <h2 class="text-[36px] font-bold text-ink mb-1">Numbers that prove the point.</h2>
+                  <p class="text-[15px] text-ink-muted leading-relaxed mb-2">Consistent outperformance vs Nifty 500 TRI — because disciplined, research-backed
+                    investing compounds meaningfully over time.</p>
+                    <app-overview></app-overview>
                 </div>
               </div>
+              
+            </div>
+            <div id="calculator" class="section-calculator scroll-mt-[88px]">
+              <div class="section-hm2 ">
+                <div class="section-title">
+                  <p class="text-[11px] font-bold  uppercase tracking-[2px] text-green mb-1">Calculators</p>
+                  <h2 class="text-[36px] font-bold text-ink mb-1">See what your money can become.</h2>
+                  <p class="text-[15px] text-ink-muted leading-relaxed mb-2">Enter an amount and see how this fund has performed vs benchmarks — so you can invest
+                    with real conviction.</p>
+                  </div>
+                  <app-calculator></app-calculator>
+              </div>
+              
+            </div>
+            
+            <div class="section-allocation">
+         
+            <div id="portfolio" class="scroll-mt-[88px]">
+              <div class="section-portfolio">
+              <div class="section-hm2 !pb-[32px] ">
+                <div class="section-title">
+                  <p class="text-[11px] font-bold  uppercase tracking-[2px] text-green mb-1">Portfolio</p>
+                  <h2 class="text-[36px] font-bold text-ink mb-1">Where your money goes.</h2>
+                  <p class="text-[15px] text-ink-muted leading-relaxed mb-2">85 carefully selected companies across sectors and market caps — built to capture growth
+                    in every market environment.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-start">
+                      <div class="min-w-0 w-full">
+                        <app-portfolio></app-portfolio>
+                      </div>
+                      <div class="min-w-0 w-full">
+                        <app-allocation></app-allocation>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              
+            </div>
             </div>
 
-            <div  class="scroll-mt-[88px]">
+            <div  class="scroll-mt-[88px] pb-[32px] border-b border-border-panel">
               <app-quantitative-indicators></app-quantitative-indicators>
             </div>
             <div id="scheme-details" class="scroll-mt-[88px]">
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-start">
-                <div class="min-w-0 w-full">
-                  <app-scheme-details></app-scheme-details>
+              <div class="section-hm2 !pb-[32px] border-b border-border-panel">
+                <div class="section-title">
+                  <p class="text-[11px] font-bold  uppercase tracking-[2px] text-green mb-1">Scheme Details</p>
+                  <h2 class="text-[36px] font-bold text-ink mb-1">Everything you need to know.</h2>
+                  <p class="text-[15px] text-ink-muted leading-relaxed mb-2">Complete scheme information — no fine print hiding the important stuff.
+                    </p>
                 </div>
-                <div class="min-w-0 w-full">
-                  <app-current-nav></app-current-nav>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-stretch">
+                  <div class="min-w-0 w-full h-full">
+                    <app-scheme-details></app-scheme-details>
+                  </div>
+                  <div class="min-w-0 w-full h-full">
+                    <app-current-nav></app-current-nav>
+                  </div>
                 </div>
               </div>
+              
             </div>
             <div id="risk-rating" class="scroll-mt-[88px]">
-              <div class="card">
-                <h2 class="text-[20px] font-bold text-ink mb-4">Riskometer</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-start">
-                  <div class="min-w-0 w-full">
-                    <img src="/risk1.png" class="w-full" alt="Risk Rating">
+              <div class="section-hm2 !pb-[72px] border-b border-border-panel">
+                <div class="section-title">
+                  <p class="text-[11px] font-bold  uppercase tracking-[2px] text-green mb-1">Risk & Suitability</p>
+                  <h2 class="text-[36px] font-bold text-ink mb-1">Know before you invest.</h2>
+                  <p class="text-[15px] text-ink-muted leading-relaxed mb-2">∗ Investors should consult their financial advisors if in doubt about whether this product is
+                    suitable for them.
+                  </p>
+                </div>
+                <div class="card">
+                  <h2 class="text-[20px] font-bold text-ink mb-4">Riskometer</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-[20px] items-start">
+                    <div class="min-w-0 w-full">
+                      <img src="/risk1.png" class="w-full" alt="Risk Rating">
+                    </div>
+                    <div class="min-w-0 w-full">
+                      <img src="/risk2.png" alt="Risk Rating">
+                    </div>
                   </div>
-                  <div class="min-w-0 w-full">
-                    <img src="/risk2.png" alt="Risk Rating">
+                </div>
+                <div class="card !bg-transparent !shadow-none">
+                  <h2 class="text-[14px] font-bold text-ink mb-8">This product is suitable for investors seeking:</h2>
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex gap-4 items-start">
+                      <img src="/pt1.svg" alt="" class="shrink-0" width="36" height="36" aria-hidden="true">
+                      <div>
+                        <h3 class="text-[14px] font-bold text-ink mb-1">Long-Term Capital Growth</h3>
+                        <p class="text-[13px] text-ink-muted leading-relaxed">
+                          Investment in equity and equity-related securities of companies across various market
+                          capitalisations.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                      <img src="/pt2.svg" alt="" class="shrink-0" width="36" height="36" aria-hidden="true">
+                      <div>
+                        <h3 class="text-[14px] font-bold text-ink mb-1">Exposure Across Market Caps</h3>
+                        <p class="text-[13px] text-ink-muted leading-relaxed">
+                          Dynamic allocation across large, mid, and small cap stocks – managed by experts, rebalanced
+                          constantly.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="flex gap-4 items-start">
+                      <img src="/pt3.svg" alt="" class="shrink-0" width="36" height="36" aria-hidden="true">
+                      <div>
+                        <h3 class="text-[14px] font-bold text-ink mb-1">Tolerance for Market Volatility</h3>
+                        <p class="text-[13px] text-ink-muted leading-relaxed">
+                          Short-term dips are normal in equity. Investors who stay the course are consistently rewarded.
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+             
             </div>
-            <div class="card !bg-transparent !shadow-none">
-              <h2 class="text-[14px] font-bold text-ink mb-8">This product is suitable for investors seeking:</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex gap-4 items-start">
-                  <img src="/pt1.svg" alt="" class="shrink-0" width="36" height="36" aria-hidden="true">
-                  <div>
-                    <h3 class="text-[14px] font-bold text-ink mb-1">Long-Term Capital Growth</h3>
-                    <p class="text-[13px] text-ink-muted leading-relaxed">
-                      Investment in equity and equity-related securities of companies across various market
-                      capitalisations.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                  <img src="/pt2.svg" alt="" class="shrink-0" width="36" height="36" aria-hidden="true">
-                  <div>
-                    <h3 class="text-[14px] font-bold text-ink mb-1">Exposure Across Market Caps</h3>
-                    <p class="text-[13px] text-ink-muted leading-relaxed">
-                      Dynamic allocation across large, mid, and small cap stocks – managed by experts, rebalanced
-                      constantly.
-                    </p>
-                  </div>
-                </div>
-                <div class="flex gap-4 items-start">
-                  <img src="/pt3.svg" alt="" class="shrink-0" width="36" height="36" aria-hidden="true">
-                  <div>
-                    <h3 class="text-[14px] font-bold text-ink mb-1">Tolerance for Market Volatility</h3>
-                    <p class="text-[13px] text-ink-muted leading-relaxed">
-                      Short-term dips are normal in equity. Investors who stay the course are consistently rewarded.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            
             <div class="p-[10px] scroll-mt-[88px]" id="fund-managers">
-              <h2 class="text-[20px] font-bold text-ink mb-4 font-inter">Fund Managers</h2>
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px] items-start">
-                <div class="card font-inter flex flex-col items-center text-center !rounded-[16px] !py-8 !px-6">
-                  <img src="/team1.png" alt="Trideep Bhattacharya"
-                    class="w-[68px] h-[68px] rounded-full object-cover mb-4">
-                  <h3 class="text-[15px] font-bold text-ink mb-4">Trideep Bhattacharya</h3>
-                  <div class="flex flex-col gap-2 mb-5 w-full">
-                    <p class="text-[12px]">
-                      <span class="text-ink-label">Total AUM:</span>
-                      <span class="font-bold text-brand"> ₹31,094 Cr</span>
+              <div class="section-hm2">
+                <div class="section-title">
+                  <p class="text-[11px] font-bold  uppercase tracking-[2px] text-green mb-1">Fund Managers</p>
+                  <h2 class="text-[36px] font-bold text-ink mb-1">The people managing your money.</h2>
+                  <p class="text-[15px] text-ink-muted leading-relaxed mb-2">Experienced professionals with combined AUM of ₹65,000+ Cr. Your wealth is in capable hands.
                     </p>
-                    <p class="text-[12px]">
-                      <span class="text-ink-label">Total Experience:</span>
-                      <span class="font-bold text-brand"> 25 years</span>
-                    </p>
-                  </div>
-                  <span class="inline-block bg-border-panel text-brand text-[11px] font-bold px-5 py-2 rounded-full">
-                    Lead Fund Manager
-                  </span>
                 </div>
-                <div class="card font-inter flex flex-col items-center text-center !rounded-[16px] !py-8 !px-6">
-                  <img src="/team2.png" alt="Ashwani Kumar Agarwalla"
-                    class="w-[68px] h-[68px] rounded-full object-cover mb-4">
-                  <h3 class="text-[15px] font-bold text-ink mb-4">Ashwani Kumar Agarwalla</h3>
-                  <div class="flex flex-col gap-2 mb-5 w-full">
-                    <p class="text-[12px]">
-                      <span class="text-ink-label">Total AUM:</span>
-                      <span class="font-bold text-brand"> ₹3,532 Cr</span>
-                    </p>
-                    <p class="text-[12px]">
-                      <span class="text-ink-label">Total Experience:</span>
-                      <span class="font-bold text-brand"> 18 years</span>
-                    </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-[20px] items-start">
+                  <div class="card font-inter flex flex-col items-center text-center !rounded-[16px] !py-8 !px-6">
+                    <img src="/team1.png" alt="Trideep Bhattacharya"
+                      class="w-[68px] h-[68px] rounded-full object-cover mb-4">
+                    <h3 class="text-[15px] font-bold text-ink mb-4">Trideep Bhattacharya</h3>
+                    <div class="flex flex-col gap-2 mb-5 w-full">
+                      <p class="text-[12px]">
+                        <span class="text-ink-label">Total AUM:</span>
+                        <span class="font-bold text-brand"> ₹31,094 Cr</span>
+                      </p>
+                      <p class="text-[12px]">
+                        <span class="text-ink-label">Total Experience:</span>
+                        <span class="font-bold text-brand"> 25 years</span>
+                      </p>
+                    </div>
+                    <span class="inline-block bg-border-panel text-brand text-[11px] font-bold px-5 py-2 rounded-full">
+                      Lead Fund Manager
+                    </span>
                   </div>
-                  <span class="inline-block bg-border-panel text-brand text-[11px] font-bold px-5 py-2 rounded-full">
-                    Fund Manager
-                  </span>
-                </div>
-                <div class="card font-inter flex flex-col items-center text-center !rounded-[16px] !py-8 !px-6">
-                  <img src="/team3.png" alt="Raj Koradia" class="w-[68px] h-[68px] rounded-full object-cover mb-4">
-                  <h3 class="text-[15px] font-bold text-ink mb-4">Raj Koradia</h3>
-                  <div class="flex flex-col gap-2 mb-5 w-full">
-                    <p class="text-[12px]">
-                      <span class="text-ink-label">Total AUM:</span>
-                      <span class="font-bold text-brand"> ₹30,454 Cr</span>
-                    </p>
-                    <p class="text-[12px]">
-                      <span class="text-ink-label">Total Experience:</span>
-                      <span class="font-bold text-brand"> 7 years</span>
-                    </p>
+                  <div class="card font-inter flex flex-col items-center text-center !rounded-[16px] !py-8 !px-6">
+                    <img src="/team2.png" alt="Ashwani Kumar Agarwalla"
+                      class="w-[68px] h-[68px] rounded-full object-cover mb-4">
+                    <h3 class="text-[15px] font-bold text-ink mb-4">Ashwani Kumar Agarwalla</h3>
+                    <div class="flex flex-col gap-2 mb-5 w-full">
+                      <p class="text-[12px]">
+                        <span class="text-ink-label">Total AUM:</span>
+                        <span class="font-bold text-brand"> ₹3,532 Cr</span>
+                      </p>
+                      <p class="text-[12px]">
+                        <span class="text-ink-label">Total Experience:</span>
+                        <span class="font-bold text-brand"> 18 years</span>
+                      </p>
+                    </div>
+                    <span class="inline-block bg-border-panel text-brand text-[11px] font-bold px-5 py-2 rounded-full">
+                      Fund Manager
+                    </span>
                   </div>
-                  <span
-                    class="inline-block bg-border-panel text-brand text-[11px] font-bold px-[12px] py-[4px] rounded-full">
-                    Fund Manager
-                  </span>
+                  <div class="card font-inter flex flex-col items-center text-center !rounded-[16px] !py-8 !px-6">
+                    <img src="/team3.png" alt="Raj Koradia" class="w-[68px] h-[68px] rounded-full object-cover mb-4">
+                    <h3 class="text-[15px] font-bold text-ink mb-4">Raj Koradia</h3>
+                    <div class="flex flex-col gap-2 mb-5 w-full">
+                      <p class="text-[12px]">
+                        <span class="text-ink-label">Total AUM:</span>
+                        <span class="font-bold text-brand"> ₹30,454 Cr</span>
+                      </p>
+                      <p class="text-[12px]">
+                        <span class="text-ink-label">Total Experience:</span>
+                        <span class="font-bold text-brand"> 7 years</span>
+                      </p>
+                    </div>
+                    <span
+                      class="inline-block bg-border-panel text-brand text-[11px] font-bold px-[12px] py-[4px] rounded-full">
+                      Fund Manager
+                    </span>
+                  </div>
                 </div>
               </div>
+             
             </div>
           </div>
         </section>
       </div>
 
       <!-- Right: Fund Card -->
-      <div
-        class="md:col-span-4 self-start order-1 md:order-2 md:sticky md:top-[72px] md:transition-transform md:duration-500 md:ease-out md:will-change-transform"
-        [ngClass]="fundCardPositionClass()"
-      >
+      <div class="home2-fund-card-sticky md:col-span-4 self-start order-1 md:order-2 md:sticky md:top-[72px]">
         <app-fund-card></app-fund-card>
       </div>
 
@@ -277,7 +322,7 @@
   </div>
 </section>
 
-<section class="py-[48px]">
+<section class="py-[48px] bg-[#F0F4FB]">
   <div class="container">
     <p class="text-[11px] text-ink-muted lh-[18.7px]"><strong class="font-bold">Important Disclaimer:</strong> Mutual
       fund investments are subject to market risks. Read all scheme-related documents carefully before investing. Past

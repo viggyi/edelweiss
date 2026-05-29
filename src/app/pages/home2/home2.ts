@@ -1,12 +1,8 @@
 
-import { NgClass } from '@angular/common';
 import {
   Component,
-  ElementRef,
   HostListener,
-  computed,
   signal,
-  viewChild,
 } from '@angular/core';
 import { FundCard } from '../../components/fund-card/fund-card';
 import { Overview } from '../../components/overview/overview';
@@ -19,8 +15,8 @@ import { CurrentNav } from '../../components/current-nav/current-nav';
 
 @Component({
   selector: 'app-home2',
+  standalone: true,
   imports: [
-    NgClass,
     FundCard,
     Overview,
     Calculator,
@@ -41,25 +37,41 @@ export class Home2 {
     { href: '/home2#calculator', label: 'Calculator' },
     { href: '/home2#portfolio', label: 'Portfolio' },
     { href: '/home2#scheme-details', label: 'Scheme Details' },
-    { href: '/home2#risk', label: 'Risk' },
+    { href: '/home2#risk-rating', label: 'Risk' },
     { href: '/home2#fund-managers', label: 'Fund Managers' },
   ] as const;
 
-  private readonly heroRef = viewChild<ElementRef<HTMLElement>>('heroSection');
-  private readonly isPastHero = signal(false);
-  private static readonly STICKY_OFFSET = 72;
+  private static readonly ACTIVE_SECTION_OFFSET = 140;
 
-  readonly fundCardPositionClass = computed(() =>
-    this.isPastHero() ? 'md:translate-y-0' : 'md:-translate-y-[600px]',
-  );
+  ngAfterViewInit(): void {
+    this.updateActiveSectionFromScroll();
+  }
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
-    const el = this.heroRef()?.nativeElement;
-    if (!el) {
-      return;
+    this.updateActiveSectionFromScroll();
+  }
+
+  private updateActiveSectionFromScroll(): void {
+    let activeHref: (typeof this.navLinks)[number]['href'] = this.navLinks[0].href;
+
+    for (const link of this.navLinks) {
+      const sectionId = link.href.split('#')[1];
+      if (!sectionId) {
+        continue;
+      }
+
+      const section = document.getElementById(sectionId);
+      if (!section) {
+        continue;
+      }
+
+      const sectionTop = section.getBoundingClientRect().top;
+      if (sectionTop <= Home2.ACTIVE_SECTION_OFFSET) {
+        activeHref = link.href;
+      }
     }
-    const bottom = el.getBoundingClientRect().bottom;
-    this.isPastHero.set(bottom <= Home2.STICKY_OFFSET);
+
+    this.activeNavHref.set(activeHref);
   }
 }

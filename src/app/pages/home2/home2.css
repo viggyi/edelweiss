@@ -14,3 +14,25 @@
 .home2-hero {
   background: linear-gradient(125.14deg, #071e42 0%, #0b3278 45%, #0d4399 100%);
 }
+
+/* Pulls fund card into hero on desktop; tune if hero height changes */
+.home2-fund-card-sticky {
+  --home2-fund-card-overlap: 600px;
+}
+
+@media (min-width: 768px) {
+  .home2-fund-card-sticky {
+    margin-top: calc(-1 * var(--home2-fund-card-overlap));
+  }
+}
+
+.fund-nav-link-active {
+  border-bottom-color: #0b3278 !important;
+  color: #0b3278;
+  font-weight: 600;
+}
+
+.fund-nav-link-inactive {
+  border-bottom-color: transparent;
+  color: #6b7280;
+}
