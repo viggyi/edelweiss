@@ -1,4 +1,5 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, inject, PLATFORM_ID, signal } from '@angular/core';
 import { FundCard } from '../../components/fund-card/fund-card';
 import { Overview } from '../../components/overview/overview';
 import { Calculator } from '../../components/calculator/calculator';
@@ -25,6 +26,8 @@ import { CurrentNav } from '../../components/current-nav/current-nav';
   styleUrl: './home.css',
 })
 export class Home {
+  private readonly platformId = inject(PLATFORM_ID);
+
   readonly activeNavHref = signal('#overview');
 
   readonly navLinks = [
@@ -48,6 +51,10 @@ export class Home {
   }
 
   private updateActiveSectionFromScroll(): void {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     let activeHref: (typeof this.navLinks)[number]['href'] = this.navLinks[0].href;
 
     for (const link of this.navLinks) {
